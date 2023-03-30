@@ -5,5 +5,11 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./models/alpaca:/root/dalai/alpaca
-      - ./models/llama:/root/dalai/llama
+      - llama:/models
+      # Uncomment to debug
+      # - ${PWD}/index.js:/root/dalai/node_modules/dalai/index.js
+      # - ${PWD}/bin/web/views/index.ejs:/root/dalai/node_modules/dalai/bin/web/views/index.ejs
+    command: ["npx", "dalai", "serve", "--home", "/models"]
+
+volumes:
+  llama:
