@@ -7,8 +7,9 @@ services:
     volumes:
       - llama:/models
       # Uncomment to debug
-      # - ${PWD}/index.js:/root/dalai/node_modules/dalai/index.js
-      # - ${PWD}/bin/web/views/index.ejs:/root/dalai/node_modules/dalai/bin/web/views/index.ejs
+    #   - ${PWD}/index.js:/root/dalai/node_modules/dalai/index.js
+    #   - ${PWD}/bin/web/views/index.ejs:/root/dalai/node_modules/dalai/bin/web/views/index.ejs
+    # command: ["tail", "-f", "/dev/null"]
     command: ["npx", "dalai", "serve", "--home", "/models"]
 
 volumes:
